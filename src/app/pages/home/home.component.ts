@@ -1,7 +1,6 @@
-import {Component, inject, Input} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {StoryDto} from "./story-dto";
 import {StoryService} from "./story-service";
-import {map} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -10,16 +9,10 @@ import {map} from "rxjs";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   private readonly storyService: StoryService = inject(StoryService);
 
-  @Input() storyDto: StoryDto = {
-    text: "Default quote text",
-    firstName: "John",
-    lastName: "Doe",
-    username: "",
-    password: ""
-  };
+  storyDto: StoryDto | undefined;
 
   ngOnInit() {
     this.getStory();
@@ -28,9 +21,6 @@ export class HomeComponent {
   getStory(): void {
     this.storyService
       .fetchStory()
-      .pipe(
-        map(response => response.data)
-      )
       .subscribe((data: StoryDto) => {
         this.storyDto = data;
       })

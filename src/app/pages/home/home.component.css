@@ -1,0 +1,31 @@
+#id {
+  bottom: 0;
+  left: 0;
+}
+
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+
+.quote-container {
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.quote {
+  font-size: 24px;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.author {
+  font-size: 16px;
+  color: #666;
+  text-align: right;
+}

@@ -3,6 +3,13 @@
   left: 0;
 }
 
+#small-poster-image {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+
 .container {
   height: calc(100vh - 100px);
   display: flex;

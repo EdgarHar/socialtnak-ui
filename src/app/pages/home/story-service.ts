@@ -6,7 +6,7 @@ import {StoryDto} from "./story-dto";
 @Injectable({ providedIn: 'root' })
 export class StoryService {
 
-  private readonly BASE_URL: string = "https://aua.socialtnak.live/story";
+  private readonly BASE_URL: string = "https://aua-creative.socialtnak.live/story";
 
   private readonly httpClient: HttpClient = inject(HttpClient);
 
